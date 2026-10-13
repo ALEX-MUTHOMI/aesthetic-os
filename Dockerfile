@@ -3,7 +3,7 @@
 # ==============================================================================
 # Digest-pinned base image (CICD-SEC-9: Improper Artifact Integrity Validation).
 # Verify/refresh via: docker manifest inspect python:3.13-slim
-FROM python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280 AS builder
+FROM python:3.14-slim@sha256:a2b82f3c48559aa0a8446d9af49826b6e2b2016f4cd2afabfe6013ec53729170 AS builder
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
@@ -44,7 +44,7 @@ RUN --mount=type=cache,target=$POETRY_CACHE_DIR \
 # ==============================================================================
 # Digest-pinned base image (CICD-SEC-9: Improper Artifact Integrity Validation).
 # Verify/refresh via: docker manifest inspect python:3.13-slim
-FROM python:3.13-slim@sha256:eb43ff125d8d58d7449dcba7d336c23bcac412f526d861db493b9994d8010280 AS runner
+FROM python:3.14-slim@sha256:a2b82f3c48559aa0a8446d9af49826b6e2b2016f4cd2afabfe6013ec53729170 AS runner
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
